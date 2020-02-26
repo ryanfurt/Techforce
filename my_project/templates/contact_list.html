@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1> {{title}} </h1>
+<a href='create/' class="btn btn-primary">Add Contact</a>
+<br/>
+<br/>
+<div class="card" style="width: 15rem;">
+    <ul class="list-group list-group-flush">
+    {%for obj in object_list%}
+    <!--<img src="..." class="card-img-top" alt="...">-->
+    
+      <li class="list-group-item"><a href='{{obj.get_absolute_url}}'>{{obj.name}}</a></li>
+      <!--<h6 class="card-subtitle mb-2 text-muted">{{obj.number}}</h6>-->
+      <!--<p class="card-text"></p>-->
+      <!--<a href='{{obj.get_absolute_url}}' class="btn btn-primary">View</a>-->
+
+    {%endfor%}
+</ul>
+</div>
+{% endblock content %}
